@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dropbox mp3 テスト</title>
+</head>
+
+<body>
+  <button onclick="onseiStart()">start</button>
+  <button onclick="onseiStop()">stop</button>
+  <script>
+    var audio;
+    function onseiStart() {
+       audio = new Audio('https://www.dropbox.com/scl/fi/dw1kuo2f4jo6g4ynky81s/04-Anidrid-Red.mp3?rlkey=znfntqe79kt8enpvm9585qqft&dl=1');
+      audio.play();
+
+    }
+    function onseiStop() {
+      audio.pause();
+    }
+  </script>
+</body>
+
+</html>
