@@ -26,12 +26,12 @@
     async function onseiStart() {
       audio = new Audio('https://www.dropbox.com/scl/fi/dw1kuo2f4jo6g4ynky81s/04-Anidrid-Red.mp3?rlkey=znfntqe79kt8enpvm9585qqft&dl=1');
       console.log('audio new OK');
-      try {
+      // try {
         await fncJyunbi();
         // await audio.play();
-      } catch (err) {
-        console.log('audio play failed with ', err);
-      }
+      // } catch (err) {
+      //   console.log('audio play failed with ', err);
+      // }
     }
     function fncJyunbi() {
       let btnSaisei = document.getElementById('btnSaisei');
