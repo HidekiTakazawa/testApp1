@@ -5,20 +5,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>dropbox mp3 テスト</title>
+  <style>
+    .displayBlock {
+      display: block;
+    }
+    .displayNone {
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
   <button onclick="onseiStart()">start</button>
   <button onclick="onseiStop()">stop</button>
+  <button id="btnSaisei"  onclick="onseiSaisei()" class="displayNone">再生</button>
   <script>
     var audio;
+    // audio = new Audio('mp3Files/track01.mp3');
+    // audio.play();
     async function onseiStart() {
-      audio = new Audio('mp3Files/track01.mp3');
-      audio.play();
       audio = new Audio('https://www.dropbox.com/scl/fi/dw1kuo2f4jo6g4ynky81s/04-Anidrid-Red.mp3?rlkey=znfntqe79kt8enpvm9585qqft&dl=1');
       console.log('audio new OK');
       try {
-        await audio.play();
+        let btnSaisei = document.getElementById('btnSaisei');
+        btnSaisei.classList.add('displayBlock');
+        btnSaisei.classList.remove('displayNone');
+        // await audio.play();
         console.log('audio play syuuryou ');
       } catch (err) {
         console.log('audio play failed with ', err);
@@ -26,6 +38,9 @@
     }
     function onseiStop() {
       audio.pause();
+    }
+    function onseiSaisei() {
+      audio.play();
     }
   </script>
 </body>
