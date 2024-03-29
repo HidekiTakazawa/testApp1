@@ -9,6 +9,7 @@
     .displayBlock {
       display: block;
     }
+
     .displayNone {
       display: none;
     }
@@ -16,28 +17,35 @@
 </head>
 
 <body>
+  <button onclick="onseiInit()">初期音声</button>
   <button onclick="onseiStart()">start</button>
   <button onclick="onseiStop()">stop</button>
-  <button id="btnSaisei"  onclick="onseiSaisei()" class="displayNone">再生</button>
+  <button id="btnSaisei" onclick="onseiSaisei()" class="displayNone">再生</button>
   <script>
     var audio;
-    // audio = new Audio('mp3Files/track01.mp3');
-    // audio.play();
+    function onseiInit() {
+      audio = new Audio('mp3Files/track01.mp3');
+      audio.play();
+
+    }
     async function onseiStart() {
       audio = new Audio('https://www.dropbox.com/scl/fi/dw1kuo2f4jo6g4ynky81s/04-Anidrid-Red.mp3?rlkey=znfntqe79kt8enpvm9585qqft&dl=1');
-      console.log('audio new OK');
-      // try {
-        await fncJyunbi();
-        // await audio.play();
-      // } catch (err) {
-      //   console.log('audio play failed with ', err);
-      // }
+      //
+      try {
+        
+        await audio.play();
+        console.log("Playing audio");
+      } catch (err) {
+        console.log("Failed to play, error: " + err);
+      }
+      //
+
     }
     function fncJyunbi() {
       let btnSaisei = document.getElementById('btnSaisei');
       btnSaisei.classList.add('displayBlock');
       btnSaisei.classList.remove('displayNone');
-      
+
       console.log('audio play syuuryou ');
     }
     function onseiStop() {
