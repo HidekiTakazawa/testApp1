@@ -27,14 +27,18 @@
       audio = new Audio('https://www.dropbox.com/scl/fi/dw1kuo2f4jo6g4ynky81s/04-Anidrid-Red.mp3?rlkey=znfntqe79kt8enpvm9585qqft&dl=1');
       console.log('audio new OK');
       try {
-        let btnSaisei = document.getElementById('btnSaisei');
-        btnSaisei.classList.add('displayBlock');
-        btnSaisei.classList.remove('displayNone');
+        await fncJyunbi();
         // await audio.play();
-        console.log('audio play syuuryou ');
       } catch (err) {
         console.log('audio play failed with ', err);
       }
+    }
+    function fncJyunbi() {
+      let btnSaisei = document.getElementById('btnSaisei');
+      btnSaisei.classList.add('displayBlock');
+      btnSaisei.classList.remove('displayNone');
+      
+      console.log('audio play syuuryou ');
     }
     function onseiStop() {
       audio.pause();
