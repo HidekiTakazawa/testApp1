@@ -23,17 +23,18 @@
   <button id="btnSaisei" onclick="onseiSaisei()" class="displayNone">再生</button>
   <script>
     var audio;
+    var audio2;
     function onseiInit() {
       audio = new Audio('mp3Files/track01.mp3');
       audio.play();
 
     }
     async function onseiStart() {
-      audio = new Audio('https://www.dropbox.com/scl/fi/dw1kuo2f4jo6g4ynky81s/04-Anidrid-Red.mp3?rlkey=znfntqe79kt8enpvm9585qqft&dl=1');
+      audio2 = new Audio('https://www.dropbox.com/scl/fi/dw1kuo2f4jo6g4ynky81s/04-Anidrid-Red.mp3?rlkey=znfntqe79kt8enpvm9585qqft&dl=1');
       //
       try {
         
-        await audio.play();
+        await audio2.play();
         console.log("Playing audio");
       } catch (err) {
         console.log("Failed to play, error: " + err);
@@ -49,10 +50,10 @@
       console.log('audio play syuuryou ');
     }
     function onseiStop() {
-      audio.pause();
+      audio2.pause();
     }
     function onseiSaisei() {
-      audio.play();
+      audio2.play();
     }
   </script>
 </body>
